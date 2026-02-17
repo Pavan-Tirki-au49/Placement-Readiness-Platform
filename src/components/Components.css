@@ -1,0 +1,177 @@
+/* UI Components */
+
+/* Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition);
+    border: 1px solid transparent;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--text-inverse);
+    border-color: var(--accent-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-accent-subtle);
+}
+
+.btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* Input */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--space-16);
+}
+
+.input-label {
+    font-size: var(--small-size);
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.input-field {
+    padding: 10px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    transition: border-color var(--transition);
+    outline: none;
+}
+
+.input-field:focus {
+    border-color: var(--accent-primary);
+    /* no heavy shadows */
+}
+
+
+/* Card */
+.card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-24);
+    /* balanced padding, no drop shadows */
+}
+
+/* Badge */
+.badge {
+    display: inline-flex;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-default {
+    background: var(--border-subtle);
+    color: var(--text-secondary);
+}
+
+.badge-progress {
+    background: var(--status-warning);
+    color: #fff;
+}
+
+.badge-success {
+    background: var(--status-success);
+    color: #fff;
+}
+
+.badge-error {
+    background: var(--status-error);
+    color: #fff;
+}
+
+
+/* Layout Specifics */
+.top-bar {
+    height: var(--topbar-height);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-24);
+    background: var(--bg-primary);
+    /* match background or white? User asked for Background: #F7F6F3 everywhere? Usually bars are white or same. Let's use slight contrast or same. User said "Background: #F7F6F3 (off-white)". Let's keep it same or white. Let's try white for bar to distinguish. */
+    background: #fff;
+}
+
+.context-header {
+    padding: var(--space-40) var(--space-24);
+    background: var(--bg-primary);
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;
+    border-top: 1px solid var(--border-subtle);
+    padding-bottom: var(--footer-height);
+}
+
+.workspace {
+    flex: 7;
+    /* 70% width */
+    padding: var(--space-40);
+    background: #fff;
+    /* Workspace often white for focus, or F7F6F3 if that's the canvas. User said "Background: #F7F6F3". Let's stick to that for outer, maybe white for cards. If workspace is interact area, maybe white background? "Primary Workspace + Secondary Panel". Let's make workspace white. */
+    background: #FFFFFF;
+    border-right: 1px solid var(--border-subtle);
+}
+
+.secondary-panel {
+    flex: 3;
+    /* 30% width */
+    padding: var(--space-24);
+    background: var(--bg-primary);
+}
+
+.proof-footer {
+    height: var(--footer-height);
+    border-top: 1px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0 var(--space-24);
+    gap: var(--space-24);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
